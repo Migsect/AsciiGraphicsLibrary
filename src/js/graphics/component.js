@@ -14,6 +14,7 @@ var Component = function(charMatrix)
      */
     characters:
     {
+      writable: true,
       value: charMatrix
     },
     /**
@@ -23,14 +24,27 @@ var Component = function(charMatrix)
      */
     color:
     {
+      writable: true,
       value: null
     },
+    /**
+     * The hexcode depicting the background color of this component
+     * 
+     * @type {Hex Code}
+     */
     backgroundColor:
     {
+      writable: true,
       value: null
     },
+    /**
+     * List of the styles such as italics or bold.
+     * 
+     * @type {String[]}
+     */
     styles:
     {
+      writable: true,
       value: []
     }
   });
@@ -38,4 +52,11 @@ var Component = function(charMatrix)
 
 Object.defineProperty(Component, "prototype", Item.prototype);
 Object.defineProperties(Component.prototype,
-{});
+{
+  render:
+  {
+    value: function() {}
+  }
+});
+
+module.exports = Component;
